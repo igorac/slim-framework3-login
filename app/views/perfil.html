@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% block conteudo %}
+
+    <h2>Sistema de upload de imagens com resize</h2>
+
+
+    <img src="{{ user.photo }}" width="90" class="img-circle">
+
+    <hr>
+
+    {{ message('message') }}
+
+    <form action="/user/photo/update" method="post" enctype="multipart/form-data">
+    
+     
+        <div class="form-group">
+            <label for="files">Foto</label>
+            <input type="file" name="files" class="form-control">
+            {{ message('files') }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+
+    
+{% endblock %}
